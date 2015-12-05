@@ -200,8 +200,8 @@ $di->setShared('assetsManager', function() use ($config) {
     $assetsManager->setJsMinifyFolder($minify_folder);
     $assetsManager->setCssMinifyFolder($minify_folder);
 
-    $assetsManager->setJsPathPrefix('/production');
-    $assetsManager->setCssPathPrefix('/production');
+    $assetsManager->setJsPathPrefix('/public/production');
+    $assetsManager->setCssPathPrefix('/public/production');
     $assetsManager->addJsFilter(new \Phalcon\Assets\Filters\Jsmin());
     $assetsManager->addCssFilter(new \Phalcon\Assets\Filters\CssMin());
     return $assetsManager;
