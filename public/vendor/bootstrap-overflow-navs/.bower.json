@@ -1,0 +1,13 @@
+{
+  "name": "bootstrap-overflow-navs",
+  "homepage": "https://github.com/tomiford/bootstrap-overflow-navs",
+  "_release": "469e006c28",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "469e006c28cf1a284ab8a51a1916046f9a6b0e03"
+  },
+  "_source": "git://github.com/tomiford/bootstrap-overflow-navs.git",
+  "_target": "*",
+  "_originalSource": "tomiford/bootstrap-overflow-navs"
+}

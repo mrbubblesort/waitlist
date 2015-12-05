@@ -1,0 +1,41 @@
+{% extends "../layouts/two-column-left.phtml" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block menu %}
+	{% include '/../layouts/partials/menu-user.phtml' %}
+{% endblock %}
+
+{% block content %}
+	<h2><?php echo $title; ?></h2>
+
+	<?php
+		if($page->items) echo $this->pagination->getRow($page, 'Fits', $this->url->get($page->meta->baseLink . $page->meta->pageLink));
+	?>
+	<div class="table-responsive">
+		<table class="table table-condensed table-hover">
+			<tr class="background-gray">
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'ID', 'fid'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'Type ID', 'type'); ?></th>
+				<th>Name</th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'Quantity', 'quantity'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'Date Created', 'date'); ?></th>
+            </tr>
+	        <?php
+	            if($page->items) {
+	                foreach($page->items as $part) {
+						?>
+							<tr>
+								<td><?php echo $part->id; ?></td>
+								<td><?php echo $part->type_id; ?></td>
+								<td><?php echo $part->type->name; ?></td>
+								<td><?php echo $part->quantity; ?></td>
+								<td><?php echo $fit->date_created; ?></td>
+							</tr>
+						<?php
+	                }
+	            }
+			?>
+		</table>
+	</div>
+{% endblock %}

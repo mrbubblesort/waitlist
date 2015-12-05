@@ -1,0 +1,17 @@
+{
+  "name": "cc",
+  "version": "1",
+  "directory": "public/vendor",
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.4",
+    "bootstrap-datepicker": "*",
+    "font-awesome": "~4.3.0",
+    "ckeditor": "~4.4.2",
+    "bootstrap-overflow-navs": "tomiford/bootstrap-overflow-navs",
+    "jquery.cookie": "carhartl/jquery-cookie#~1.4.1",
+    "selectize": "0.10.1",
+    "filament-tablesaw": "filamentgroup/tablesaw#v1.0.4"
+  },
+  "private": true
+}

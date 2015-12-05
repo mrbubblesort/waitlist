@@ -1,0 +1,25 @@
+{% extends "../layouts/two-column-left.phtml" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block menu %}
+	{% include '/../layouts/partials/menu-user.phtml' %}
+{% endblock %}
+
+{% block content %}
+<?php
+	if(!$this->session->get('auth')) {
+		?><div class="alert alert-info" role="alert">Please login to see active missions and wait list.</div><?php
+	}
+	else {
+		?>
+			<div class="alert alert-success" role="alert">Welcome back <?php echo $this->session->get('auth')->name; ?></div>
+
+			<div class="alert alert-warning" role="alert">Please click the 'request trust' button below to enable full site functionality</div>
+
+			<button class="btn btn-warning" type="button" onclick="CCPEVE.requestTrust('<?php echo $this->config->application->baseUri; ?>');">Request Trust</button>
+		<?php
+	}
+?>
+{% endblock %}
+

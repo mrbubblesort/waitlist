@@ -1,0 +1,22 @@
+{
+    "name": "jr/eve",
+    "type": "project",
+    "description": "Eve Phalcon Project",
+    "repositories": [
+        { "type": "composer", "url": "https://packagist.org" }
+    ],
+    "require": {
+        "phalcon/incubator": "v1.3.4",
+        "phalcon/devtools": "2.*",
+        "ezyang/htmlpurifier": "v4.6.0",
+        "swiftmailer/swiftmailer": "@stable"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "bower install --allow-root"
+        ],
+        "post-update-cmd": [
+            "bower install --allow-root"
+        ]
+    }
+}

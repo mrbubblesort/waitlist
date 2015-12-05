@@ -1,0 +1,549 @@
+html, body {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* disable webkit tap highlight */
+    height: 100%; /* fixes focus scrolling in Safari (OS X) */
+    /* overflow-x: hidden; /* prevents horizontal scroll bars , This hides scroll bar on iphone and ipad*/ 
+    /* overflow-y: scroll; /* This creats extra scroll bar on ie9 and ubuntu  */   
+    /* -webkit-overflow-scrolling: touch; /* Stops the choppy scroll but causes overflow-x scroll issues with menu */
+}
+
+hr {
+    border-color: @gray;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.center {
+    text-align: center;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+ .text-right-center {
+    text-align: right;
+}
+ 
+ 
+.bold {
+    font-weight: bold;
+    color: @black;
+}
+
+.no-bold {
+    font-weight: normal !important;
+}
+
+.hidden {
+    display: none;
+}
+
+.no-text-shadow {
+    text-shadow: none;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+
+// Margin
+// -------------------------
+.no-margin {
+    margin: 0;
+}
+
+// Margin Top
+// -------------------------
+.no-margin-top {
+    margin-top: 0;
+}
+
+.margin-top-2 {
+    margin-top: 2px !important;
+}
+
+.margin-top-xs {
+    margin-top: 5px;
+}
+
+.margin-top-7 {
+    margin-top: 7px;
+}
+
+.margin-top-8 {
+    margin-top: 8px;
+}
+
+.margin-top-sm {
+    margin-top: 10px;
+}
+
+.margin-top-12 {
+    margin-top: 12px;
+}
+
+.margin-top-md {
+    margin-top: 20px;
+}
+
+.margin-top-lg {
+    margin-top: 30px;
+}
+
+.margin-top-41 {
+    margin-top: 41px;
+}
+
+// Margin Bottom
+// -------------------------
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.margin-bottom-1 {
+    margin-bottom: 1px !important;
+}
+
+.margin-bottom-xs {
+    margin-bottom: 5px;
+}
+
+.margin-bottom-sm {
+    margin-bottom: 10px !important;
+}
+
+.margin-bottom-smd {
+    margin-bottom: 15px;
+}
+
+.margin-bottom-md {
+    margin-bottom: 20px;
+}
+
+.margin-bottom-lg {
+    margin-bottom: 30px;
+}
+
+// Mobile only change
+// -------------------------
+@media (max-width: @grid-float-breakpoint) {
+    .padding-bottom-footer-screen-xs {
+        padding-bottom: 30px !important;
+    }
+    .margin-bottom-footer-screen-xs-employer {
+        margin-bottom: 30px !important;
+    }
+}
+
+@media (max-width: 1105px) and (min-width: @grid-float-breakpoint) {
+    .padding-bottom-footer-screen-xs {
+        padding-bottom: 50px !important;
+    }
+    .margin-bottom-footer-screen-xs-employer {
+        margin-bottom: 50px !important;
+    }
+}
+
+
+// Margin right
+// -------------------------
+.no-margin-right {
+    margin-right: 0 !important;
+}
+
+.margin-right-xs {
+    margin-right: 5px;
+}
+
+.margin-right-sm {
+    margin-right: 10px;
+}
+
+.margin-right-md {
+    margin-right: 20px;
+}
+
+// Margin left
+// -------------------------
+.no-margin-left {
+    margin-left: 0 !important;
+}
+
+.margin-left-xs {
+    margin-left: 5px;
+}
+
+.margin-left-sm {
+    margin-left: 10px;
+}
+
+.margin-left-md {
+    margin-left: 20px;
+}
+
+.container-fliud-max-width {
+    max-width: 1400px;
+    margin: auto;
+}
+
+// Padding
+// -------------------------
+.no-pad {
+    padding: 0 !important;
+}
+
+.no-pad-sides-xs {
+    padding: 3px 0 !important;
+}
+
+.no-pad-sides {
+    padding: 10px 0;
+}
+
+.no-pad-sides-lg {
+    padding: 30px 0;
+}
+
+// Padding Top
+// -------------------------
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+.no-pad-top {
+    padding: 0 10px;
+}
+
+.pad-top-sm {
+    padding-top: 10px;
+}
+
+.pad-top-md {
+    padding-top: 20px;
+}
+
+.pad-top-lg {
+    padding-top: 30px;
+}
+
+// Padding Left
+// -------------------------
+.pad-left-sm {
+    padding-left: 10px;
+}
+
+.pad-left-md {
+    padding-left: 20px;
+}
+
+// Padding Right
+// -------------------------
+.pad-right-sm {
+    padding-right: 10px;
+}
+
+// Padding Bottom
+// -------------------------
+.no-pad-bottom {
+    padding-bottom: 0 !important;
+}
+
+.pad-bottom-sm {
+    padding-bottom: 10px;
+}
+
+.pad-bottom-md {
+    padding-bottom: 20px;
+}
+
+.pad-bottom-lg {
+    padding-bottom: 30px;
+}
+
+
+// White-space
+// -------------------------
+.nowrap {
+    white-space:nowrap;
+}
+    
+
+// Unsupported Browser
+// -------------------------
+.unsupported-browser {
+    background: #fdf7c2;
+    width: 100%;
+    border-top: solid 1px #f7f0b0;
+    border-bottom: solid 1px #f7f0b0;
+    text-align: center;
+    padding: 5px 0px 5px 0px; 
+}
+
+
+// Background
+// -------------------------
+.background-blue {
+    background-color: @blue;
+}
+
+.background-blue-light {
+    background-color: @blue-light;
+}
+
+.background-blue-lighter {
+    background-color: @blue-lighter;
+}
+
+.background-blue-dark {
+    background-color: #c8e0f1 !important;
+}
+
+.background-blue-bright {
+    background-color: @blue-bright;
+}
+.background-brown {
+    background-color: @brown;
+}
+
+.background-gray-light {
+    background-color: @gray-white !important;
+}
+
+.background-gray {
+    background-color: @gray-lightest;
+}
+
+.background-gray-dark {
+    background-color: @black-lighter;
+}
+
+.background-green {
+    background-color: @green !important;
+}
+
+.no-background-image {
+    background-image: none !important;
+}
+
+.background-orange {
+    background-color: @brand-warning;
+}
+
+.background-red {
+    background-color: @brand-danger !important;
+}
+
+.background-red-bright {
+    background-color: @red-bright;
+}
+
+.background-white {
+    background-color: @white !important;
+}
+
+
+// list
+// -------------------------
+
+.no-list-style {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+
+
+// Border
+// -------------------------
+
+.border-dotted {
+    border: 1px dotted @gray-border;
+}
+
+.border {
+    border: 1px solid @gray-border;
+}
+
+.border-bottom {
+    border-bottom: 1px solid @gray-border;
+}
+
+.border-bottom-dotted {
+    border-bottom: 1px dotted @gray-border;
+    margin: 15px 0;
+}
+
+.border-top {
+    border-top: 1px solid @gray-border;
+}
+
+.border-top-blue {
+    border-top: 1px solid #92c0d7 !important;
+}
+
+.border-blue {
+    border: 1px solid #92c0d7 !important;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.border-radius {
+    border-radius: 3px;
+}
+
+.border-right {
+    border-right: 1px solid @gray-border;
+}
+
+.border-right-blue {
+    border-right: 1px solid @blue-light;
+}
+
+.border-right-dotted {
+    border-right: 1px dotted @gray-border;
+}
+
+.border-left {
+    border-left: 1px solid @gray-border;
+}
+
+.border-left-blue {
+    border-left: 1px solid @blue-light;
+}
+
+.no-radius {
+    border-radius: 0;
+}
+
+.no-border-top {
+    border-top: none !important;
+}
+
+.no-border-bottom {
+    border-bottom: none !important;
+}
+
+.no-border-right {
+    border-right: none !important;
+}
+
+.no-border-left {
+    border-left: none !important;
+}
+
+
+// image resposive
+// -------------------------
+.img-responsive {
+    display: inline; // inline does not kill position center
+}
+
+// Vertical Align
+// -------------------------
+.vertical-align-top {
+    vertical-align: top !important;
+}
+.vertical-align-middle {
+    vertical-align: middle;
+}
+
+
+// position
+// -------------------------
+.negative-top-xs {
+    position: relative; 
+    top:-2px;
+}
+
+.width-auto {
+    width: auto;
+}
+
+
+.pull-right-left {
+    float: right;
+}
+
+.pull-right-none {
+    float: right;
+}
+
+// Desktop only CSS
+// ------------------------- 
+@media screen and (min-width: @grid-float-breakpoint) { 
+}
+
+// Mobile
+// -------------------------
+@media screen and (max-width: @grid-float-breakpoint) { 
+    .margin-bottom-xs-mobile {
+        margin-bottom: 5px;
+    }
+    .margin-bottom-sm-mobile {
+        margin-bottom: 10px;
+    }
+    .margin-bottom-md-mobile {
+        margin-bottom: 20px;
+    }
+    .pad-bottom-xs-mobile {
+        padding-bottom: 5px;
+    }
+    .pad-bottom-sm-mobile {
+        padding-bottom: 10px;
+    }
+    
+    .text-right-center {
+        text-align: center;
+    }
+    
+    .pull-right-left {
+        float: left;
+    }
+    .pull-right-none {
+        float: none;
+        clear:both;
+    }
+}
+
+.alert-header {
+    .alert-variant(@alert-info-bg; @alert-info-border; @alert-info-text);
+    border-bottom: 1px solid @alert-info-border;
+}
+
+
+.website-feature {
+    margin-bottom: 20px;
+
+    .website-feature-image img {
+        width: 100%;
+        height: auto;
+    }
+    .website-feature-image {
+        border: 1px solid @gray-border;
+        text-align: center;
+    }
+    .website-feature-title {
+        border: 1px solid @gray-border;
+        border-top: none;
+        border-bottom: none;
+        margin: 0;
+        padding: 10px 10px 0px 10px;
+        font-weight: 600;
+    }
+    .website-feature-content {
+        border: 1px solid @gray-border;
+        border-top: none;
+        margin: 0;
+        padding: 0px 10px 10px 10px;
+    }
+}

@@ -1,0 +1,13 @@
+{% extends "../layouts/two-column-left.phtml" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block menu %}
+	{% include '/../layouts/partials/menu-user.phtml' %}
+{% endblock %}
+
+{% block content %}
+	
+	{{ partial('forms/character/add') }}
+	
+{% endblock %}

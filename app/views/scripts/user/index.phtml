@@ -1,0 +1,99 @@
+{% extends "../layouts/two-column-left.phtml" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block menu %}
+	{% include '/../layouts/partials/menu-user.phtml' %}
+{% endblock %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-sm-12 col-md-12">
+			<h3 class="h3-sm">
+				<?php
+					echo $this->tag->linkTo(array(
+						'user/edit',
+						'<i class="fa fa-file-text-o"></i> Profile',
+					));
+				?>
+			</h3>
+		</div>
+	</div>
+	<div class="row margin-bottom-md">
+		<div class="col-sm-7 col-md-7">
+			<div class="table-responsive">
+				<table class="table table-striped table-hover table-condensed no-margin-bottom">
+                	<tr>
+                		<td>Name</td>
+                		<td><?php echo $user->name; ?></td>
+                	</tr>
+                	<tr>
+                		<td>Teamspeak</td>
+                		<td><?php echo $user->teamspeak; ?></td>
+                	</tr>
+                	<tr>
+                		<td>Join Date</td>
+                		<td><?php echo $user->date_created; ?></td>
+                	</tr>
+                	<tr>
+                		<td>Number of Characters</td>
+                		<td><?php echo count($user->characters); ?></td>
+                	</tr>
+                	<tr>
+                		<td>Number of Fits</td>
+                		<td><?php echo 0; ?></td>
+                	</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<?php
+		if($page->items) echo $this->pagination->getRow($page, 'Characters', $this->url->get('user/index' . $page->meta->pageLink));
+	?>
+	<div class="table-responsive">
+		<table class="table table-condensed table-hover">
+			<tr class="background-gray">
+				<th><?php echo $this->pagination->sortByLink($page->meta, 'user/index', 'ID', 'id'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, 'user/index', 'Name', 'name'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, 'user/index', 'Game ID', 'gid'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, 'user/index', 'Date Created', 'date'); ?></th>
+                <th></th>
+                <th></th>
+            </tr>
+	        <?php
+	            if($page->items) {
+	                foreach($page->items as $char) {
+						?>
+							<tr>
+								<td><?php echo $char->id; ?></td>
+								<td><?php echo $char->name; ?></td>
+								<td><?php echo $char->game_id; ?></td>
+								<td><?php echo $char->date_created; ?></td>
+								<td>
+									<?php
+										echo $this->tag->linkTo(array(
+											'character/fits/' . $char->id,
+											'<i class="fa fa-fighter-jet"></i> Fits',
+											'class' => 'btn btn-info btn-sm pull-left margin-right-xs',
+										));
+									?>
+								</td>
+								<td>
+									<?php
+										echo $this->tag->linkTo(array(
+											'character/delete/' . $char->id,
+											'<i class="fa fa-trash-o"></i> Delete',
+											'class' => 'btn btn-danger btn-sm pull-left margin-right-xs',
+										));
+									?>
+								</td>
+							</tr>
+						<?php
+	                }
+	            }
+			?>
+		</table>
+	</div>
+{% endblock %}
+

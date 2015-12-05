@@ -1,0 +1,76 @@
+{% extends "../layouts/two-column-left.phtml" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block menu %}
+	{% include '/../layouts/partials/menu-user.phtml' %}
+{% endblock %}
+
+{% block content %}
+	<h2><?php echo $title; ?></h2>
+
+	<?php
+		echo $this->tag->linkTo(array(
+			'mission/add',
+			'<i class="fa fa-plus"></i> Create New Mission',
+			'class' => 'btn btn-success pull-left',
+		));
+
+		if($page->items) echo $this->pagination->getRow($page, 'Fits', $this->url->get($page->meta->baseLink . $page->meta->pageLink));
+	?>
+	<div class="table-responsive">
+		<table class="table table-condensed table-hover">
+			<tr class="background-gray">
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'ID', 'mid'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'Name', 'name'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'Active', 'active'); ?></th>
+				<th><?php echo $this->pagination->sortByLink($page->meta, $page->meta->baseLink, 'Date Created', 'date'); ?></th>
+                <th></th>
+                <th></th>
+            </tr>
+	        <?php
+	            if($page->items) {
+	                foreach($page->items as $mission) {
+						?>
+							<tr class="<?php echo ($mission->active == 1) ? 'success' : ''; ?>">
+								<td><?php echo $mission->id; ?></td>
+								<td><?php echo $mission->name; ?></td>
+								<td><?php echo ($mission->active == 1) ? 'Yes' : 'No'; ?></td>
+								<td><?php echo $mission->date_created; ?></td>
+								<td>
+									<?php
+										if((bool)$mission->active) {
+											echo $this->tag->linkTo(array(
+												'mission/toggle/' . $mission->id,
+												'<i class="fa fa-power-off"></i> Deactivate',
+												'class' => 'btn btn-danger btn-sm pull-left margin-right-xs',
+											));
+										}
+										else {
+											echo $this->tag->linkTo(array(
+												'mission/toggle/' . $mission->id,
+												'<i class="fa fa-plug"></i> Activate',
+												'class' => 'btn btn-success btn-sm pull-left margin-right-xs',
+											));
+										}
+
+									?>
+								</td>
+								<td>
+									<?php
+										echo $this->tag->linkTo(array(
+											'mission/delete/' . $mission->id,
+											'<i class="fa fa-trash-o"></i> Delete',
+											'class' => 'btn btn-danger btn-sm pull-left margin-right-xs',
+										));
+									?>
+								</td>
+							</tr>
+						<?php
+	                }
+	            }
+			?>
+		</table>
+	</div>
+{% endblock %}
+

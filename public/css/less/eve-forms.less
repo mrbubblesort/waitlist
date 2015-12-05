@@ -1,0 +1,480 @@
+
+// Autosize will shrink out textareas down to one line unless we assign a default height
+
+textarea {
+    min-height: 100px;
+}
+
+.textarea-lg {
+    min-height: 400px;
+}
+
+option {
+    font-size: @font-size-base;
+}
+
+select[disabled] {
+    cursor: auto;
+}
+
+.form input[type="text"][readonly], .form select[disabled] {
+    background-color: @gray-white !important;
+}
+
+.form-blue .form select[disabled] {
+    background-color: @gray-border-lighter !important;
+}
+
+.error_list {
+    margin-top: 5px;
+}
+
+// Input
+input {
+    box-shadow: none !important;
+}
+
+label {
+    font-weight: normal;
+}
+
+form {
+    label.required:after {
+        color: @brand-danger;
+        font-weight: 600;
+        content: ' *';
+        display: inline;
+    }
+    label.either-or:after {
+        color: @brand-warning;
+        font-weight: 600;
+        content: ' *';
+        display: inline;
+    }
+    input.input-date {
+        width: 80px;
+    }
+    input.input-number {
+        width: 60px;
+    }
+    .input-sm {
+        .box-sizing-border-box;
+        width: 140px !important;
+    }
+    .input-smd {
+        .box-sizing-border-box;
+        width: 80px !important;
+    }
+    .input-xs {
+        .box-sizing-border-box;
+        max-width: 100% !important;
+    }
+    .input-half {
+        .box-sizing-border-box;
+        width: 46.5% !important;
+    }
+    .input-70 {
+        .box-sizing-border-box;
+        width: 70% !important;
+    }
+    .input-full {
+        .box-sizing-border-box;
+        width: 100% !important;
+    }
+    .input-half-middle {
+        .box-sizing-border-box;
+        width: 7% !important;
+    }
+    .height-auto {
+        height: auto !important;
+    }
+}
+
+.title-counter {
+    position: relative;
+    top: 10px;
+}
+
+
+// Edit selectize-input to cc layout style
+.selectize-input .item {
+    padding-top: 6px !important;
+    color: @text-color;
+}
+.selectize-input  {
+    padding: 0 12px !important;
+}
+.selectize-input input  {
+    width: auto !important;
+}
+.selectize-control.single .selectize-input:after {
+    border: none !important;
+}
+
+.form,
+.form-horizontal {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    input[type="url"],
+    input[type="password"],
+    input[type="tel"],
+    textarea,
+    select {
+        .form-control;
+        .box-sizing(border-box);
+        border-radius: 3px;
+        border-color: @gray-border;
+        padding: 6px;
+        font-size: @font-size-base;
+        box-shadow: none !important;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    // Bootstrap errors require .form-control class on form element
+    .has-error input[type="text"],
+    .has-error input[type="email"],
+    .has-error input[type="number"],
+    .has-error input[type="url"],
+    .has-error input[type="password"],
+    .has-error input[type="tel"],
+    .has-error textarea,
+    .has-error select {
+        border-color: @state-danger-text;
+        background-color: @state-danger-bg !important;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    }
+    .has-feedback input[type="text"],
+    .has-feedback input[type="email"],
+    .has-feedback input[type="number"],
+    .has-feedback input[type="url"],
+    .has-feedback input[type="password"],
+    .has-feedback input[type="tel"],
+    .has-feedback textarea,
+    .has-feedback select {
+        padding-right: 42.5px;
+    }
+
+    .input-sm.sm {
+        height: 30px;
+        font-size: 12px;
+    }
+    .input-xs.xs {
+        height: 22px;
+        font-size: 12px;
+        padding: 1px 5px;
+    }
+    .input-xs.xs.folder-select-user {
+        width: 181px;
+    }
+    .input-xs.xs.folder-open-folder {
+        width: 115px;
+    }
+    .input-xs.xs.folder-move-to-folder {
+        width: 104px;
+    }
+    div.note {
+        float: left;
+    }
+    label.note {
+        float:none;
+        text-align:left;
+        margin: 0;
+        padding: 5px 0 0 0;
+    }
+    div.left {
+        float:left;
+        margin:0 10px 0 0;
+    }
+    div.terms {
+        margin: 0;
+        width:460px; // Needs to be adjusted in responsive CSS
+        float:left;
+        text-align:left;
+    }
+
+    // Select
+    select  {
+        text-indent: .01px;
+        text-overflow: "";
+        cursor: pointer;
+    }
+    h2 {
+        display: block;
+        width: 100%;
+        padding: 0;
+        font-size: 16px;
+        font-weight: 400;
+        color: @brand-warning;
+        border: 0;
+        margin: 0 0 6px 0;
+    }
+    .controls {
+        p {
+            margin-top-md: 5px;
+        }
+    }
+    .controls.text {
+        margin-top-md: 4px;
+    }
+}
+
+.arrow-one {
+    background: url("/images/icons/arrow-one.png") 304px 33px no-repeat;
+    background-size: 13px 13px !important;
+    -webkit-background-size: 13px 13px !important;
+}
+
+.arrow-one-multiple {
+    background: url("/images/icons/arrow-one.png") 304px 90px no-repeat;
+    background-size: 13px 13px !important;
+    -webkit-background-size: 13px 13px !important;
+}
+
+.arrow-two {
+    background: url("/images/icons/arrow-two.png") 304px 33px no-repeat;
+    background-size: 330px 13px !important;
+    -webkit-background-size: 330px 13px !important;
+}
+
+.arrow-two-multiple {
+    background: url("/images/icons/arrow-two.png") 304px 90px no-repeat;
+    background-size: 330px 13px !important;
+    -webkit-background-size: 330px 13px !important;
+}
+
+.arrow-down {
+    background: url("/images/icons/arrow-down.png") 15px 0 no-repeat;
+    background-size: 13px 13px !important;
+    -webkit-background-size: 13px 13px !important;
+    height: 13px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.checklist_tools {
+    border-top: none !important;
+    border: 1px solid @gray-border;
+    background: @gray-white;
+    border-radius: 0 0 3px 3px;
+    padding: 6px;
+    .checklist_total {
+        float: right;
+    }
+}
+
+.no-bottom-round {
+    border-radius: 3px 3px 0 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.narrow-width {
+    max-width: @content-width;
+    margin: auto;
+}
+
+.pad-control-label {
+    padding-top: 7px;
+}
+// Form blue
+// -------------------------
+.form-blue {
+    background-color: @blue-light !important;
+    border: none;
+    h2 {
+        color: @black;
+    }
+    hr {
+        border-color: #8dbad9;
+    }
+    input, select {
+    border: none;
+    margin-bottom: 5px !important;
+    }
+}
+
+
+// Form gray
+// -------------------------
+.form-gray {
+    input, select  {
+        border: 1px solid @gray-border;
+    }
+}
+
+.form-gray .row .col-sm-4 {
+    margin-bottom: 10px;
+    .clearfix
+}
+.form-gray .row .form-group {
+    margin-bottom: 0;
+}
+
+// Form error
+// -------------------------
+.invalid {
+    border-color: @brand-danger !important;
+    color: @brand-danger !important;
+    background-color: @state-danger-bg !important;
+}
+
+.error_list {
+    color: @brand-danger !important;
+}
+
+ul.error_list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 0;
+    li:before {
+        font-family: FontAwesome;
+        content: "\f06a";
+        padding-right: 5px;
+    }
+}
+
+.no-radius-left {
+    input { border-radius: 0 3px 3px 0 !important; }
+    button { height: 32px;}
+}
+
+.form-group-no-matgin-bottom {
+    .form-group {
+        margin-bottom: 0;
+    }
+}
+
+// Chrome and safari
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .form,
+    .form-horizontal {
+        select {
+            padding-right: 15px;
+            background: @white url(/images/icons/arrow.png) no-repeat;
+            background-position: right 5pt top 11pt;
+            background-size: 6px 3px;
+        }
+        select.input-xs.xs {
+            background-position: right 5pt top 6pt;
+        }
+        select.invalid {
+            background-image: url(/images/icons/arrow-red.png) ;
+        }
+    }
+}
+
+// Job search form plus
+.plus {
+    font-size: 50px;
+    line-height: 30px;
+}
+
+
+.form-horizontal .has-feedback .form-control-feedback {
+  top: 9px;
+}
+
+// Mobile
+// -------------------------
+@media screen and (max-width: @grid-float-breakpoint) {
+    .form-horizontal .control-label, .form-horizontal .radio, .form-horizontal .checkbox, .form-horizontal .radio-inline, .form-horizontal .checkbox-inline {
+        margin-bottom: 5px;
+        padding-top: 0;
+    }
+    .arrow-one, .arrow-one-multiple, .arrow-two, .arrow-two-multiple {
+        background-image: none;
+    }
+    // Font size 16px disable auto zoom function to iphone forms
+    input, select, textarea {
+        font-size: 16px !important;
+        height: auto !important;
+    }
+    .selectize-input  {
+        padding: 6px 12px !important;
+    }
+    .form,
+    .form-horizontal {
+         .input-xs.xs {
+            height: auto;
+            padding: 6px;
+            width: 100% !important;
+        }
+        select.input-xs.xs {
+            background-position: right 5pt top 11pt;
+        }
+        select {
+            background-position: right 5pt top 11pt !important;
+        }
+        // iPhone 4s
+        select {
+            background-position: 97% 50%;
+        }
+    }
+    .narrow-width {
+        width: 100%;
+        }
+    .well.narrow-width {
+        margin-right: 0;
+        margin-left: 0;
+        border-radius: 3px;
+        border-left: 1px solid #d1d1d1;
+        border: right: 1px solid #d1d1d1;
+    }
+    .form-horizontal .has-feedback .form-control-feedback {
+        top: 11px;
+    }
+    .col-sm-6 select, .col-md-6 select {
+        margin-bottom: 10px;
+    }
+    .no-radius-left {
+        button { height: 36px;}
+    }
+}
+
+// Large desktop
+// -------------------------
+@media (min-width: 1170px) {
+    .arrow-one-multiple {
+        background: url("/images/icons/arrow-one.png") 33.3% 90px no-repeat;
+    }
+}
+
+.preview-img {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+// Admin horizontal forms
+.admin {
+    .form-horizontal {
+        max-width: @content-width;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+#aggregations .checkbox {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#aggregations .checkbox-sub {
+    .checkbox;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 20px;
+
+    label {
+        cursor: pointer;
+        font-weight: normal;
+        margin-bottom: 0;
+        min-height: 18px;
+        padding-left: 20px;
+    }
+
+    input[type="checkbox"] {
+        margin-left: -20px;
+        position: absolute;
+    }
+}

@@ -1,0 +1,223 @@
+// Navs
+// -------------------------
+
+.tabbable.help {
+	ul {
+		margin-top-md: -30px;
+		li {
+			float: right;
+		}
+	}
+}
+
+.nav .badge {
+  margin-left: 5px;
+}
+
+.nav-tabs {
+    margin-bottom: 10px;
+}
+
+// Tab bottom section
+.tabs-bottom {
+    border-radius: 0 0 3px 3px;
+    border: 1px solid @gray-border;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    border-top: none;
+}
+
+.nav-tabs li.active a, .nav-tabs li.active a:hover, .nav-tabs li.active a:focus {
+    border-top: solid 3px @blue;
+}
+
+.nav-tabs li a {
+    border-top: solid 3px @white;
+}
+
+.employer .nav-tabs li.active a, .employer .nav-tabs li.active a:hover, .employer .nav-tabs li.active a:focus {
+    border-top: solid 3px @blue;
+}
+
+// Gray nav tabs
+.nav-tabs.nav-tabs-gray {
+    margin-bottom: 0;
+    li.active a, li.active a:hover, li.active a:focus { 
+        background: @gray-lightest;
+        border-bottom: 1px solid @gray-lightest;
+    }
+}
+.nav-tabs.nav-tabs-gray > li > a {
+    border-radius: none;
+}
+
+// Change cursor for help and search tabs so user realizes they can close
+.nav-tabs > li.active > a#search-tab, .nav-tabs > li.active > a#help-tab {
+    cursor: pointer;
+}
+
+li.tabs-blue a {
+    border: 1px solid @blue-light;
+    border-top: 3px solid #70b2df;
+    border-radius: 3px 3px 0 0;
+    background-color: @blue-lighter;
+}
+li.tabs-blue a:hover {
+    border: 1px solid @blue-light;
+    border-top: 3px solid #70b2df;
+    border-radius: 3px 3px 0 0;
+    background-color: #bddcf1;
+}
+.tabs-blue.active {
+    border: none;
+}
+
+
+
+.tab-content {
+     #help {
+        width: 80%;
+        margin: 10px auto 50px auto;
+        .well
+     }
+     #help ul li { 
+        float: none !important;
+     }
+}
+
+.tab-content-gray {
+    background: @gray-lightest !important;
+    border: 1px solid @nav-tabs-border-color;
+    border-top: none;
+    form {
+        padding: 10px 0;
+    }
+}
+
+.job-search-tab.nav-tabs {
+    border-bottom: none;
+}
+
+.job-search-tab.nav-tabs a {
+    border-top: 3px solid #fff;
+    border-bottom: none;
+    
+}
+
+.job-search-tab.nav-tabs a:hover {
+    border-top: 3px solid #efefef;
+    border-bottom: none;
+    
+}
+
+.job-search-tab.nav-tabs > li.active > a {
+    background: @gray-lightest !important;
+}
+
+.nav > div a {
+    display: block;
+    position: relative;
+}
+
+.side-menu {
+    background: @white;
+    margin-bottom: 20px;
+    li a {
+        padding: 3px 15px;
+    }
+    div a {
+        padding: 3px 15px;
+    }
+}
+
+.side-menu-pad {
+    padding: 6px 15px !important;
+}
+
+.side-menu .nav-header {
+    border-radius: 3px 3px 0 0;
+    background: @blue-lighter;
+    border: 1px solid @blue-light;
+    font-size: @font-size-base;
+    padding: 6px 0px;
+    color: @black-lighter;
+    a { color: @black-lighter; }
+}
+
+.side-menu li a:hover {
+    text-decoration: underline;
+    background: @white;
+}
+
+.side-menu ul {
+    border: 1px solid @gray-border;
+    border-top: none;
+    border-radius: 0 0 3px 3px;
+    padding: 5px 0;
+}
+
+.side-menu li.active a {
+    border-left: 2px solid @blue;
+    padding-left: 13px;
+    font-weight: bold;
+    color: @blue;
+    background: @gray-lightest;
+}
+
+
+
+
+// Mobile
+// -------------------------
+
+@media screen and (max-width: @grid-float-breakpoint) { 
+    .tab-content {
+        #help {
+            width: 100%;
+            }
+        }
+    .tabbable.help ul {
+        margin-top: 40px;
+    }
+    .tabbable.help ul li {
+        float: left;
+    }
+    
+    .tabs-bottom {
+        border: none;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+        .col-sm-7, .col-md-7,.col-sm-5, .col-md-5 
+        {
+            padding:0;
+        }
+    }
+    .tab-no-border a {
+        border: none !important;
+    }
+    .btn-group.open .dropdown-toggle {
+        box-shadow: none;
+    }
+    .tab-content ul li {
+        float: left !important;
+    }
+    .nav-tabs.nav-justified > li > a {
+        border-radius: 3px 3px 0 0;
+        margin-bottom: 0;
+    }
+    .nav-tabs > li {
+        margin-bottom: 0;
+        margin-bottom: -1px;
+    }
+    .nav-tabs > li a:hover {
+        border-bottom-color: #eee;
+        
+    }
+    .nav-tabs.nav-justified {
+        border-bottom: 1px solid @gray-border;
+        margin-bottom:1px;
+    }
+}
+

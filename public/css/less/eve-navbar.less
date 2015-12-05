@@ -1,0 +1,323 @@
+// Navbar
+// -------------------------
+
+.navbar {
+    min-height: 35px;
+    margin-bottom: 30px;
+}
+
+.navbar .active .badge {
+    background-color: @white;
+    color: @text-color;
+}
+
+
+.navbar-default {
+    background-color: @white;
+    border-bottom: 3px solid @blue;
+    border-radius: 0;
+    z-index: 10;
+}
+
+.navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:hover, .navbar-default .navbar-nav .open a:focus {
+    color: @text-color;
+    background: @gray-lightest;
+}
+
+.navbar-default .navbar-nav .active.open a:hover, .navbar-default .navbar-nav .active.open a:focus {
+    color: @white;
+    background: @blue;
+}
+
+// Off canvas menu for old android and old iphone
+.navbar-collapse.navbar-offcanvas,
+.navbar-login.navbar-offcanvas {
+    -webkit-backface-visibility: hidden;  /* Chrome, Safari, Opera */
+    backface-visibility: hidden;
+    -webkit-transform:translateZ(0);
+    z-index: 1000;
+}
+
+            
+// Desktop only changes
+@media (min-width: @grid-float-breakpoint) {
+    // No padding for desktop navbar
+    .navbar-collapse {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    // Add border to desktop nav elements
+    .navbar-nav {
+        li:first-child {
+            border-left: 1px solid @navbar-default-border;
+        }
+        li.home{ width: 160px; }
+        li {
+            border-right: 1px solid @navbar-default-border;
+            width: 156px;
+            text-align: center;
+            a {
+                padding: 8px 0;
+                line-height: 20px;
+            }
+            a:hover {
+                background: @gray-lightest;
+            }
+        }
+        li.active {
+            a:hover {
+                background: @blue;
+            }
+        }
+    }
+
+    // Employer nav
+    .employer .navbar-nav {
+        li {
+            width: auto;
+            a {
+                padding: 8px 8px;
+                line-height: 20px;
+            }
+        }
+    } 
+    // Employer article nav
+    .employer.article .navbar-nav {
+        li {
+            width: 156px;
+            a {
+                padding: 8px 8px;
+                line-height: 20px;
+            }
+        }
+    }            
+}
+
+// Mobile
+// -------------------------
+
+@media (max-width: @grid-float-breakpoint) {
+
+    .navbar-default .navbar-nav .active.open a:hover,
+    .navbar-default .navbar-nav .active.open a:focus {
+        background-color: #4a4a4c;
+        color: @white;
+    }
+    .navbar-default .navbar-nav > .active > a:hover,  {
+        background-color: #4a4a4c !important;
+    }
+    .navbar-default .navbar-nav .open a, .navbar-default .navbar-nav .open a:hover, .navbar-default .navbar-nav .open a:focus {
+        background-color: #4a4a4c;
+        color: @white;
+        border-left-color: #232323;
+    }
+
+    .navbar-nav.pull-right {
+        float: none !important;
+    }
+
+    .navbar-nav {
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .navbar-nav {
+        li {
+            border-bottom: 1px solid #000;
+        }
+    }
+    .navbar-default .navbar-nav > li > a {
+        color: @white;
+        border-left: 6px solid @black;
+    }
+    
+    .navbar-default .navbar-nav > li > a:hover,
+    .navbar-default .navbar-nav > li > a:focus {
+        background-color: @black-lighter;
+        color: @gray-lighter;
+    }
+
+    .navbar-default .navbar-nav > .active > a, 
+    .navbar-default .navbar-nav > .active > a:hover, 
+    .navbar-default .navbar-nav > .active > a:focus {
+        background-color: @black;
+        border-left: 6px solid @navbar-default-link-active-bg;
+        
+    }
+    // Change navbar toogle to left
+    .navbar-default .navbar-toggle {
+        position: relative;
+        float: left;
+        margin-left: @navbar-padding-horizontal;
+        border: none;
+        padding: 0;
+        margin-top: 10px;
+        
+        i {
+            font-size: 20px;
+        }
+    }
+    .navbar-toggle:hover, .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: @white;
+    }
+}
+
+.navbar-header {
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+// Center logo
+.navbar-brand {
+    float: left;
+    margin: 0;
+    margin-top: 2px;
+    padding: 0;
+    height: auto;
+    img {
+        padding: 6px;
+    }
+}
+
+// Change navbar toogle to left
+.navbar-login-toggle {
+    background-color: rgba(0, 0, 0, 0);
+    background-image: none;
+    position: relative;
+    float: right;
+    margin-right: -15px;
+    border: none;
+    padding: 0;
+    margin-top: 10px;
+
+    i {
+        font-size: 20px;
+    }
+}
+.navbar-login {
+    background-color: @white;
+    display: none;
+}
+.register-login {
+    margin-bottom: 10px;
+    margin-top: -15px;
+    text-align: center;
+    border-bottom: 1px solid @gray-border;
+    padding: 10px 0;
+    background-color: @gray-lighter;
+}
+
+.register-login-arrow {
+    border: 1px solid @gray-border;
+    height: 11px; width: 11px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    background: @gray-lighter;
+    border-right: none;
+    border-bottom: none;
+    position: absolute;
+    top: 35px;
+    right: 18px;
+}
+
+
+
+// Custom CSS for mobile menu
+/* * Off Canvas navbar toggle right * -------------------------------------------------- */
+@media screen and (max-width: @grid-float-breakpoint) {
+    html, body, .navbar-collapse, .navbar-login { 
+        // min-height: 100vh;  // This creats extra margin on pages which have Japanese and oversea address switcher
+        height: 100vh; 
+        max-height: 100vh;   
+    }
+    .navbar {
+        margin-bottom: 15px;
+    }
+  
+    #site-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        background: @white;
+    }
+
+    #site-canvas {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    //  TK - trasform makes stiky footer not work
+    //  -webkit-transform: translateX(0);
+    //  transform: translateX(0);
+        -webkit-transition: .3s ease all;
+        -moz-transition: all .3s ease-out;
+        transition: .3s ease all;
+    }
+
+    #site-wrapper.show-nav #site-canvas {
+        -webkit-transform: translateX(280px);
+        transform: translateX(280px);
+    }
+
+    #site-wrapper.show-login #site-canvas {
+        -webkit-transform: translateX(-280px);
+        transform: translateX(-280px);
+    }
+
+    /* mobile nav wrapper */
+    .navbar-offcanvas {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 280px;
+        z-index: 3;
+    }
+    
+    .navbar-collapse {
+        // iOS safari 4 does not support vh
+        min-height: 9999px;
+    }
+    
+    .navbar-login.navbar-offcanvas {
+        right: -280px;
+    }
+
+    .navbar-collapse.navbar-offcanvas {
+        left: -280px;
+    }
+
+    // Black menu for mobile only
+    .navbar-collapse {
+        background: @black;
+        color: @white;
+    }
+
+    .navbar-login {
+        display: block;
+        border-left: 1px solid @navbar-default-border;
+        text-align: left;
+        padding: 10px;
+        background: @white;
+        z-index: 10;
+
+        ul {
+            margin-bottom: 0;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+    }
+    .navbar-default {
+        background-color: @white;
+        border-bottom: 1px solid @gray-border;
+        border-radius: 0;
+    }
+    .navbar-brand-mobile {
+        position: relative;
+        top: 7px;
+    }
+}

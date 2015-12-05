@@ -1,0 +1,90 @@
+<?php
+	//header('Transfer-Encoding: chunked;'); - ML - Breaking iOS safari download of the site
+	header('Content-Type: text/html; charset=utf-8;');
+	header('Content-Language: en');
+
+	// Prevent document caching
+	header('Expires: ' . gmdate('D, d M Y H:i:s \G\M\T', time()));
+	header('Last-Modified: ' . gmdate("D, d M Y H:i:s") . ' GMT');
+	header('Cache-Control: must-revalidate');
+
+    //Prevent other sites from loading us in an iframe
+	header('X-Frame-Options: DENY');
+
+    $this->tag->setDoctype(\Phalcon\Tag::HTML5);
+    echo $this->tag->getDoctype();
+?>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+    <head>
+        {% include "/../layouts/partials/head.phtml" %}
+        <title>{% block title %}{% endblock %}</title>
+        
+        {% block stylesheets %}{% endblock %}
+        <style type="text/css" media="all">
+            {% block inlinecss %}{% endblock %}
+        </style>
+    </head>
+
+    <body class="{{ site }}" id="page-top">
+
+        {# #site-wrapper is used in the mobile navigation, it will be used to hide overflowed elements without messing up the scroll #}
+        <div id="site-wrapper">
+            {# #site-canvas is used in the mobile navigation, #site-canvas part is what slides left and right and holds all the content of the page. #}
+            <div id="site-canvas">
+                {% block header %}
+                    {% if site == 'admin' %}
+                        {% include "/../layouts/partials/header-admin.phtml" %}
+                    {% else %}
+                        {% include "/../layouts/partials/header-user.phtml" %}
+                    {% endif %}
+                {% endblock %}
+
+                {% block nav %}
+                    {% if site == 'admin' %}
+                        {% include "/../layouts/partials/nav-admin.phtml" %}
+                    {% else %}
+                        {% include "/../layouts/partials/nav-user.phtml" %}
+                    {% endif %}
+                {% endblock %}
+
+
+                <div class="container">
+                    {% block messages %}
+                        <?php $this->flash->output(); ?>
+                    {% endblock %}
+                    <?php
+                        // Output an error message for invalid phalcon forms
+                        if(isset($form) && $form instanceof Phalcon\Forms\Form && count($form->getMessages())) {
+                            echo '<div class="alert alert-danger">Please check the form for errors</div>';
+                        }
+                    ?>
+                    {% block search %}{% endblock %}
+                    <div class="row">
+                        <div class="col-sm-3 col-md-3">
+                            {% block menu %}{% endblock %}
+                        </div>
+                        <div class="col-sm-9 col-md-9">
+                            {% block content %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+
+                {% block footer %}
+                    {% if site == 'admin' %}
+                        {% include "/../layouts/partials/footer-admin.phtml" %}
+                    {% else %}
+                        {% include "/../layouts/partials/footer-user.phtml" %}
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+
+        {% include "/../layouts/partials/javascripts.phtml" %}
+        {% block javascripts %}{% endblock %}
+        <script type="text/javascript">
+            $(document).ready(function() {
+                {% block jqueryonload %}{% endblock %}
+            });
+        </script>
+    </body>
+</html>
