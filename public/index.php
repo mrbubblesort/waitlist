@@ -1,11 +1,11 @@
 <?php
-echo phpinfo(); die();
+
 defined('APPLICATION_PATH') || define('APPLICATION_PATH', (getenv('APPLICATION_PATH')
     ? getenv('APPLICATION_PATH') : realpath(dirname(__FILE__) . '/../app/')));
 
 defined('APPLICATION_ENV') || define('APPLICATION_ENV', (getenv('APPLICATION_ENV')
     ? getenv('APPLICATION_ENV') : 'development'));
-    
+
 
 /**********************
  *      Configs       *
